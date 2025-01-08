@@ -8,10 +8,12 @@ choice(name: ‘BRANCH’, choices: [‘Master’, ‘Dev’], description: ‘C
 password(name: 'SONAR_SERVER_PWD', description: 'Enter SONAR password')
 }
 stages {
-    stage('HELLO') {
+    stage('Printing parameters') {
         steps {
-            echo 'Hello World'
+            script {
+                echo "${params.NAME}"
             }
+        }
     }
     stage('BUILD') {
         steps {
