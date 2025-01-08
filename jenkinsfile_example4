@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    parameters{
+        password(name: 'SONAR_SERVER_PWD', description: 'Enter SONAR password')
+    }
+    stages {
+        stage('HELLO') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('BUILD') {
+            steps {
+                echo 'Developpement'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('DEPLOY') {
+            steps {
+                echo 'Mise en Production'
+            }
+        }
+    }
+}
